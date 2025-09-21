@@ -1,16 +1,15 @@
 # Add all changes to staging
 git add .
 
-# Commit the fixes
-git commit -m "Fix Netlify build issues: Node version and CommonJS imports
+# Commit the final fixes
+git commit -m "Final fix: Correct react-idle-timer ES module import
 
-- Update Netlify configuration to use Node version 20 (was 18)
-- Add NPM version 10 for compatibility
-- Fix react-idle-timer CommonJS import issue
-- Replace named export with default import + destructuring"
+- Revert to named export import for react-idle-timer v5.7.2
+- Fix 'default' export not found error in ES module context
+- Use correct ES module syntax: import { useIdleTimer } from 'react-idle-timer'"
 
 # Push to GitHub
 git push origin main
 
-Write-Host "Fixes committed and pushed to GitHub!"
-Write-Host "Ready for Netlify redeployment!"
+Write-Host "Final fix committed and pushed to GitHub!"
+Write-Host "Ready for final Netlify deployment!"

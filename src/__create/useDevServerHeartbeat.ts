@@ -1,8 +1,7 @@
 'use client';
 
-// Fix CommonJS import issue for react-idle-timer
-import pkg from 'react-idle-timer';
-const { useIdleTimer } = pkg;
+// Fix ES module import issue for react-idle-timer v5.7.2
+import { useIdleTimer } from 'react-idle-timer';
 
 export function useDevServerHeartbeat() {
   useIdleTimer({
