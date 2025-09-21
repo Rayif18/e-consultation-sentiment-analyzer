@@ -7,12 +7,13 @@
   port = 5173
   publish = "dist"
 
+# Set Node version for Netlify build environment
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+
 # Redirect all routes to index.html for SPA (Single Page Application)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Set environment variables for React Router
-[build.environment]
-  NODE_VERSION = "18"
