@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode base styles */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
+}
+
+/* Ensure text visibility in dark mode */
+.dark body {
+  color: #ffffff;
+}
+
+/* Custom utilities for better dark mode support */
+@layer utilities {
+  .text-visible {
+    @apply text-[#111318] dark:text-white/87;
+  }
+  .text-muted {
+    @apply text-[#667085] dark:text-white/60;
+  }
+  .bg-surface {
+    @apply bg-white dark:bg-[#1E1E1E];
+  }
+  .border-subtle {
+    @apply border-[#E6EAF0] dark:border-white/10;
+  }
+}
+
+@layer base {
+  input, textarea, select, button {
+    @apply outline-none focus:outline-none;
+  }
+}
